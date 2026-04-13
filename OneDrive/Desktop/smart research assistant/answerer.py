@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 HF_TOKEN = os.getenv("HF_TOKEN")
-API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3"
+API_URL = "https://router.huggingface.co/hf-inference/models/mistralai/Mistral-7B-Instruct-v0.3/v1/chat/completions"
 
 headers = {
     "Authorization" : f"Bearer {HF_TOKEN}"
@@ -26,19 +26,24 @@ Answer clearly and concisely in 3-4 sentences. [/INST]"""
 
 def ask_llm(prompt):
     payload = {
-        "inputs" : prompt,
-        "parameters" : {
-            "max_new_tokens" : 300,
-            "temperature" : 0.3,
-            "return_full_text" : False
-        }
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        "max_tokens": 300,
+        "temperature": 0.3
     }
+    
     response = requests.post(API_URL, headers=headers, json=payload)
-
+    
     if response.status_code != 200:
         return f"API Error: {response.status_code} - {response.text}"
+    
     result = response.json()
-    answer = result[0]["generated_text"]
+    answer = result["choices"][0]["message"]["content"]
     return answer.strip()
 
 def get_answer_with_citation(query, chunks):
