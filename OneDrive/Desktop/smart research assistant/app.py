@@ -22,7 +22,7 @@ def process_pdf(pdf_file):
         print("Building index...")
         index, embeddingd = build_index(chunks)
 
-        return f"PDF loaded succesfully! Created {len(chunks)} chunks. Yuou can now ask questions. "
+        return f"PDF loaded succesfully! Created {len(chunks)} chunks. You can now ask questions. "
     
     except Exception as e:
         return f"error loading pdf: {str(e)}"
@@ -46,7 +46,7 @@ def answer_question(question):
             web_prompt = build_prompt(question, web_chunks)
             web_answer = ask_llm(web_prompt)
 
-            return f"Answer:\n{web_answser}\n\nSource: Web search (not found in your document)"
+            return f"Answer:\n{web_answer}\n\nSource: Web search (not found in your document)"
         
         return f"Answer:/n{answer}/n/n{citation}"
     
