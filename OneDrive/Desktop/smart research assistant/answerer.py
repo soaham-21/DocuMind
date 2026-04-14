@@ -1,10 +1,9 @@
-import google.generativeai as genai
+from google import genai
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-1.5-flash")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def build_prompt(query, chunks):
     context = ""
@@ -22,13 +21,16 @@ Answer clearly and concisely in 3-4 sentences."""
 
 def ask_llm(prompt):
     try:
-        response =  model.generate_content(prompt)
+        response =  client.models.generate_content(
+            model = "gemini-1.5-flash-8b",
+            contents=prompt
+            )
         return response.text.strip()
     except Exception as e:
         return f"Error: {str(e)}"
     
 def get_answer_with_citation(query, chunks):
-    prompt = build_propmt(query,chunks)
+    prompt = build_prompt(query,chunks)
     answer = ask_llm(prompt)
 
     if "NOT_IN_DOCUMENT" in answer:
