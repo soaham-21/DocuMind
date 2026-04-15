@@ -25,7 +25,7 @@ If the answer isn't in the document, DocuMind automatically searches the web.
 3. Create a .env file with your Gemini API key
    GEMINI_API_KEY=your_key_here
 4. Run the app
-   python app.py
+   python website.py
 5. Open http://localhost:7860 in your browser
 
 ## What I learned
