@@ -48,7 +48,7 @@ def answer_question(question):
 
             return f"Answer:\n{web_answer}\n\nSource: Web search (not found in your document)"
         
-        return f"Answer:/n{answer}/n/n{citation}"
+        return f"Answer:\n{answer}\n\n{citation}"
     
     except Exception as e:
         return f"Error: {str(e)}"
