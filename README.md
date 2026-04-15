@@ -1,11 +1,7 @@
 # DocuMind
 
-Ask questions about any PDF in plain English and get AI-powered answers with clear citations.
-If the answer isn’t in the document, DocuMind automatically searches the web and tells you which parts came from the document vs. the web.
-
-DocuMind is built as a complete Retrieval-Augmented Generation (RAG) pipeline with an agentic fallback workflow.
-
----
+Ask questions about any PDF in plain English and get AI-powered answers with citations.
+If the answer isn't in the document, Grimoire automatically searches the web.
 
 ## Features
 
@@ -62,47 +58,12 @@ DocuMind is built as a complete Retrieval-Augmented Generation (RAG) pipeline wi
 
    ```
    GEMINI_API_KEY=your_key_here
-   ```
+4. Run the app
+   python app.py
+5. Open http://localhost:7860 in your browser
 
-4. Start the application
-
-   ```bash
-   python website.py
-   ```
-
-5. Open `http://localhost:7860` in your browser
-
----
-
-## Example Questions to Try
-
-* “Summarize the introduction section”
-* “What methodology does the author use?”
-* “Explain this paper in simple terms”
-* “What is reinforcement learning?” (triggers web fallback if not in the PDF)
-
----
-
-## What I Learned Building This
-
-* How RAG systems work beyond theory
-* How embeddings and vector search enable semantic retrieval
-* How to design agentic logic that decides when to use external tools
-* How to turn an ML pipeline into a usable web application
-
----
-
-## Why This Project Matters
-
-DocuMind demonstrates a production-style RAG architecture with tool-calling behavior. It reflects practical skills in retrieval systems, LLM grounding, and building interactive ML applications.
-
----
-
-## Future Improvements
-
-* Support for multiple PDFs
-* Persistent vector storage
-* Highlight cited text directly in the document view
-* Streaming responses for better UX
-
----
+## What I learned
+- How RAG pipelines work in practice
+- How embeddings and vector search enable semantic search
+- How to build agentic fallback logic
+- How to go from a terminal script to a deployed web app
