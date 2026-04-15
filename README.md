@@ -1,7 +1,7 @@
-# Grimoire
+# DocuMind
 
 Ask questions about any PDF in plain English and get AI-powered answers with citations.
-If the answer isn't in the document, Grimoire automatically searches the web.
+If the answer isn't in the document, DocuMind automatically searches the web.
 
 ## Features
 - Upload any PDF and chat with it
