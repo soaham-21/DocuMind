@@ -53,9 +53,9 @@ def answer_question(question):
     except Exception as e:
         return f"Error: {str(e)}"
     
-with gr.Blocks(title="Grimoire") as app:
+with gr.Blocks(title="DocuMind") as app:
 
-    gr.Markdown("# Grimoire")
+    gr.Markdown("# DocuMind")
     gr.Markdown("Upload any pdf and ask questions about it in plain English.")
 
     with gr.Row():
@@ -84,7 +84,7 @@ with gr.Blocks(title="Grimoire") as app:
             )
 
             ask_btn = gr.Button(
-                "Ask Grimoire",
+                "Ask DocuMind",
                 variant="primary"
             )
 

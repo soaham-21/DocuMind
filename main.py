@@ -15,7 +15,7 @@ print(f"Total chunks created: {len(chunks)}")
 print("Building search index...")
 index, embeddings = build_index(chunks)
 
-print("\nGrimoire is ready! Ask anything. (type 'quit' to stop)\n")
+print("\nDocuMind is ready! Ask anything. (type 'quit' to stop)\n")
 
 while True:
     query = input("Your question: ")
