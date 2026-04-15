@@ -23,7 +23,7 @@ DocuMind is built as a complete Retrieval-Augmented Generation (RAG) pipeline wi
 * Python
 * Sentence Transformers (embeddings)
 * FAISS (vector similarity search)
-* Google Gemini API (LLM)
+* Groq API (LLM)
 * PyMuPDF (PDF parsing)
 * DuckDuckGo Search (web fallback tool)
 * Gradio (UI)
@@ -61,7 +61,7 @@ DocuMind is built as a complete Retrieval-Augmented Generation (RAG) pipeline wi
 3. Create a `.env` file and add your Gemini API key
 
    ```
-   GEMINI_API_KEY=your_key_here
+   GROQ_API_KEY=your_key_here
    ```
 
 4. Start the application
